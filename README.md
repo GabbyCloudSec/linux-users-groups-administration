@@ -1,6 +1,6 @@
 # Linux Users & Groups Administration
 
-> Part of my Cloud Support Engineering portfolio, demonstrating Linux user and group administration, access control, file permissions, and troubleshooting through a real-world scenario.
+> Part of my Cloud Support Engineering portfolio, demonstrating Linux user and group administration, access control, file permissions, and troubleshooting through a realistic support scenario.
 
 **Status:** ✅ Complete
 
@@ -31,6 +31,7 @@ sudo useradd -m alex
 sudo passwd alex
 chgrp cloudsupport /srv/cloudsupport
 chmod 770 /srv/cloudsupport
+sudo -u alex ls -l /srv/cloudsupport/project-files
 ```
 
 ---
@@ -63,9 +64,21 @@ drwxrwx--- root  cloudsupport project-files
 
 ## Screenshots
 
-- User and group creation
-- Permission configuration
-- Successful access verification
+### Project Structure
+
+![Project Structure](screenshots/01-project-structure.png)
+
+---
+
+### Technical Implementation
+
+![Technical Implementation](screenshots/02-technical-implementation.png)
+
+---
+
+### Verification
+
+![Verification](screenshots/03-verification.png)
 
 ---
 
