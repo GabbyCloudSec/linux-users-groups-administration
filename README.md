@@ -2,7 +2,19 @@
 
 > Part of my Cloud Support Engineering portfolio, demonstrating Linux user and group administration, access control, file permissions, and troubleshooting through a realistic support scenario.
 
-**Status:** ✅ Complete
+**Status:** Complete
+
+---
+
+## At a Glance
+
+**Scenario:** An operations team needed a secure shared directory — team members required access to shared documentation while unauthorized users needed to be locked out.
+
+**Solution:** Created a dedicated user and group, applied least-privilege permissions, diagnosed a parent-directory access issue, and relocated resources to `/srv/cloudsupport` following Linux filesystem standards.
+
+**Skills:** Linux user & group administration · Ownership & permissions · Least privilege · Root cause troubleshooting · Technical documentation
+
+**Tools:** Ubuntu (WSL2) · Bash · Git · GitHub
 
 ---
 
@@ -40,44 +52,36 @@ sudo -u alex ls -l /srv/cloudsupport/project-files
 
 The solution was verified by testing access from multiple user accounts and confirming that only authorized users could access the shared project directory.
 
-### Verification Results
-
 ```text
 uid=1001(alex)
 groups=1002(alex),1001(cloudsupport)
-
 drwxrwx--- root  cloudsupport project-files
 -rw-rw---- gabby cloudsupport project-plan.txt
 ```
 
+### Verification Results
+
 | Test | Result |
 |------|--------|
-| Linux user created | ✅ Passed |
-| Linux group created | ✅ Passed |
-| User added to shared group | ✅ Passed |
-| Ownership configured | ✅ Passed |
-| Permissions configured | ✅ Passed |
-| Access verified using `alex` | ✅ Passed |
-| Unauthorized access prevented | ✅ Passed |
+| Linux user created | Passed |
+| Linux group created | Passed |
+| User added to shared group | Passed |
+| Ownership configured | Passed |
+| Permissions configured | Passed |
+| Access verified using `alex` | Passed |
+| Unauthorized access prevented | Passed |
 
 ---
 
 ## Screenshots
 
 ### Project Structure
-
 ![Project Structure](screenshots/01-project-structure.png)
 
----
-
 ### Technical Implementation
-
 ![Technical Implementation](screenshots/02-technical-implementation.png)
 
----
-
 ### Verification
-
 ![Verification](screenshots/03-verification.png)
 
 ---
@@ -89,17 +93,6 @@ drwxrwx--- root  cloudsupport project-files
 - Git
 - GitHub
 - Visual Studio Code
-
----
-
-## Skills Demonstrated
-
-- Linux user and group administration
-- Linux permissions and ownership
-- Access control and least privilege
-- Troubleshooting and root cause analysis
-- Technical documentation
-- Git and GitHub workflow
 
 ---
 
@@ -123,7 +116,6 @@ Rather than weakening the security of a user's home directory, I relocated the s
 ## Author
 
 **Gabriell Bedoy**
-
 Cloud Support Engineer candidate building hands-on experience with Linux, AWS, networking, and cloud infrastructure.
 
 GitHub: https://github.com/GabbyCloudSec
