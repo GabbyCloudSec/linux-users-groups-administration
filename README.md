@@ -1,26 +1,37 @@
-# Linux Users & Groups Administration
+# 👥 Linux Users & Groups Administration
 
-> Part of my Cloud Support Engineering portfolio, demonstrating Linux user and group administration, access control, file permissions, and troubleshooting through a realistic support scenario.
+## Overview
 
-**Status:** Complete
+This project simulates configuring secure access to shared resources in a Linux environment. The objective was to create users and groups, apply least-privilege permissions, troubleshoot access issues, and verify that only authorized users could access shared files.
+
+**Status:** ✅ Complete
 
 ---
 
-## At a Glance
+## Skills Demonstrated
 
-**Scenario:** An operations team needed a secure shared directory — team members required access to shared documentation while unauthorized users needed to be locked out.
+- Linux user and group administration
+- Linux permissions and ownership
+- Access control and least privilege
+- Troubleshooting and root cause analysis
+- Technical documentation
+- Git and GitHub workflow
 
-**Solution:** Created a dedicated user and group, applied least-privilege permissions, diagnosed a parent-directory access issue, and relocated resources to `/srv/cloudsupport` following Linux filesystem standards.
+---
 
-**Skills:** Linux user & group administration · Ownership & permissions · Least privilege · Root cause troubleshooting · Technical documentation
+## Tools Used
 
-**Tools:** Ubuntu (WSL2) · Bash · Git · GitHub
+- Ubuntu 26.04 LTS (WSL2)
+- Bash
+- Git
+- GitHub
+- Visual Studio Code
 
 ---
 
 ## Scenario
 
-A Cloud Support Engineer needs to configure a secure shared project directory for an operations team. Team members require access to shared documentation while preventing unauthorized users from viewing or modifying sensitive files.
+This project simulates configuring a secure shared project directory for an operations team. Team members require access to shared documentation while preventing unauthorized users from viewing or modifying sensitive files.
 
 The solution uses Linux users, groups, ownership, and permissions while following the principle of least privilege and Linux filesystem best practices.
 
@@ -52,70 +63,61 @@ sudo -u alex ls -l /srv/cloudsupport/project-files
 
 The solution was verified by testing access from multiple user accounts and confirming that only authorized users could access the shared project directory.
 
+### Verification Results
+
 ```text
 uid=1001(alex)
 groups=1002(alex),1001(cloudsupport)
+
 drwxrwx--- root  cloudsupport project-files
 -rw-rw---- gabby cloudsupport project-plan.txt
 ```
 
-### Verification Results
-
 | Test | Result |
 |------|--------|
-| Linux user created | Passed |
-| Linux group created | Passed |
-| User added to shared group | Passed |
-| Ownership configured | Passed |
-| Permissions configured | Passed |
-| Access verified using `alex` | Passed |
-| Unauthorized access prevented | Passed |
+| Linux user created | ✅ Passed |
+| Linux group created | ✅ Passed |
+| User added to shared group | ✅ Passed |
+| Ownership configured | ✅ Passed |
+| Permissions configured | ✅ Passed |
+| Access verified using `alex` | ✅ Passed |
+| Unauthorized access prevented | ✅ Passed |
 
 ---
 
 ## Screenshots
 
 ### Project Structure
+
 ![Project Structure](screenshots/01-project-structure.png)
 
+---
+
 ### Technical Implementation
+
 ![Technical Implementation](screenshots/02-technical-implementation.png)
 
+---
+
 ### Verification
+
 ![Verification](screenshots/03-verification.png)
 
 ---
 
-## Technologies Used
+## Key Takeaways
 
-- Ubuntu 26.04 LTS (WSL2)
-- Bash
-- Git
-- GitHub
-- Visual Studio Code
-
----
-
-## Key Takeaway
-
-This project reinforced that Linux access depends on both file permissions and group membership. During troubleshooting, I discovered that correct file permissions alone were insufficient because execute permission is required on every parent directory in the path.
+This project reinforced that Linux access control depends on both file permissions and directory permissions. During troubleshooting, I discovered that correct file permissions alone were insufficient because execute permission is required on every parent directory in the path.
 
 Rather than weakening the security of a user's home directory, I relocated the shared resources to `/srv/cloudsupport`, following Linux filesystem best practices for shared service resources.
 
+This project also strengthened my understanding of how Linux users, groups, ownership, and permissions work together to provide secure access while following the principle of least privilege.
+
 ---
 
-## Future Improvements
+## Next Steps
 
 - Configure SetGID for automatic group inheritance
 - Implement POSIX Access Control Lists (ACLs)
 - Automate user and group provisioning with Bash
 - Deploy the solution on an AWS EC2 Linux instance
-
----
-
-## Author
-
-**Gabriell Bedoy**
-Cloud Support Engineer candidate building hands-on experience with Linux, AWS, networking, and cloud infrastructure.
-
-GitHub: https://github.com/GabbyCloudSec
